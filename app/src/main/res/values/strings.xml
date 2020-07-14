@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Robot Controller</string>
+    <string name="permissions_required">Permissions Required</string>
+    <string name="bluetooth_permissions">Bluetooth must be enabled for this app to properly communicate with other devices.</string>
+    <string name="location_permissions">Location must be enabled for this app to discover nearby devices.</string>
+    <string name="bluetooth_hardware_fail">Failed to find the bluetooth adapter on this device.</string>
+    <string name="paired_devices">Paired Devices</string>
+    <string name="discovered_devices">Discovered Devices</string>
+    <string name="connect">Connect</string>
+    <string name="control">Control</string>
+    <string name="permissions_rationale">Bluetooth and location services must be enabled in order for this app to properly find and communicate with nearby devices.</string>
+    <string name="go_to_settings">The necessary permissions for this app must be enabled in this device\'s settings.</string>
+    <string name="location_hardware_fail">Failed to find the location manager on this device.</string>
+    <string name="location_settings_instructions">Return back to this app once location settings have been turned on.</string>
+    <string name="device_selected">Device selected. Press connect to attempt connection.</string>
+    <string name="socket_creation_failed">Socket creation failed</string>
+    <string name="connection_failed">Failed to connect</string>
+    <string name="socket_close_fail">Failed to close socket</string>
+    <string name="connection_successful">Connection successful</string>
+    <string name="attempting_connection">Attempting connection</string>
+    <string name="stop_button_description">Stop button image</string>
+    <string name="forward_button_description">Forward button image</string>
+    <string name="backward_button_description">Backward button image</string>
+    <string name="left_button_description">Left button image</string>
+    <string name="right_button_description">Right button image</string>
+    <string name="spin_left_button_description">Spin left button image</string>
+    <string name="spin_right_button_description">Spin right button image</string>
+    <string name="zero">0</string>
+    <string name="one_hundred">100</string>
+    <string name="negative_one_hundred">-100</string>
+    <string name="left_motor_speed">Left Motor Speed</string>
+    <string name="right_motor_speed">Right motor speed</string>
+    <string name="failed_input">Failed to get input stream</string>
+    <string name="failed_output">Failed to get output stream</string>
+    <string name="communication_disrupted">Communication between this device and the robot has been disrupted</string>
+    <string name="about">This application was created by Jaideep Prasad for the Michigan State University CSE 476 Spring 2020 Honors Option.</string>
+</resources>

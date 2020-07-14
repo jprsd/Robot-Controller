@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ControllerActivity">
+
+    <ImageButton
+        android:id="@+id/stopButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/stop_button_description"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        android:tint="@android:color/holo_red_dark"
+        app:srcCompat="@drawable/baseline_report_black_48" />
+
+    <ImageButton
+        android:id="@+id/forwardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/stopButton"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/forward_button_description"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/baseline_arrow_upward_black_48" />
+
+    <ImageButton
+        android:id="@+id/backwardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stopButton"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/backward_button_description"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/baseline_arrow_downward_black_48" />
+
+    <ImageButton
+        android:id="@+id/leftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/stopButton"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/left_button_description"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/baseline_arrow_back_black_48" />
+
+    <ImageButton
+        android:id="@+id/rightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/stopButton"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/right_button_description"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/baseline_arrow_forward_black_48" />
+
+    <ImageButton
+        android:id="@+id/spinLeftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/stopButton"
+        android:layout_alignStart="@id/leftButton"
+        android:layout_alignTop="@id/forwardButton"
+        android:layout_toStartOf="@id/stopButton"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/spin_left_button_description"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        android:scaleY="-1"
+        app:srcCompat="@drawable/baseline_subdirectory_arrow_left_black_48" />
+
+    <ImageButton
+        android:id="@+id/spinRightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/stopButton"
+        android:layout_alignTop="@id/forwardButton"
+        android:layout_alignEnd="@id/rightButton"
+        android:layout_toEndOf="@id/stopButton"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/spin_right_button_description"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        android:scaleY="-1"
+        app:srcCompat="@drawable/baseline_subdirectory_arrow_right_black_48" />
+
+    <SeekBar
+        android:id="@+id/leftMotorController"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-100dp"
+        android:layout_marginEnd="50dp"
+        android:layout_toStartOf="@id/stopButton"
+        android:max="200"
+        android:progress="100"
+        android:rotation="270"
+        android:splitTrack="false" />
+
+    <SeekBar
+        android:id="@+id/rightMotorController"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="-100dp"
+        android:layout_toEndOf="@id/stopButton"
+        android:max="200"
+        android:progress="100"
+        android:rotation="270"
+        android:splitTrack="false" />
+
+    <TextView
+        android:id="@+id/leftMotorText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/leftReferenceFrame"
+        android:layout_alignStart="@id/leftReferenceFrame"
+        android:layout_alignEnd="@id/leftReferenceFrame"
+        android:layout_marginStart="-50dp"
+        android:layout_marginEnd="-50dp"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:text="@string/left_motor_speed"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/rightMotorText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rightReferenceFrame"
+        android:layout_alignStart="@id/rightReferenceFrame"
+        android:layout_alignEnd="@id/rightReferenceFrame"
+        android:layout_marginStart="-50dp"
+        android:layout_marginEnd="-50dp"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:text="@string/right_motor_speed"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/leftZeroText"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@id/leftReferenceFrame"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/rightZeroText"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/rightReferenceFrame"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/leftHundred"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/leftZeroText"
+        android:layout_alignStart="@id/leftZeroText"
+        android:layout_alignEnd="@id/leftZeroText"
+        android:layout_marginStart="-15dp"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:text="@string/one_hundred"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/rightHundred"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rightZeroText"
+        android:layout_alignStart="@id/rightZeroText"
+        android:layout_alignEnd="@id/rightZeroText"
+        android:layout_marginStart="-15dp"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:text="@string/one_hundred"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/leftNegHundred"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leftZeroText"
+        android:layout_alignStart="@id/leftHundred"
+        android:layout_alignEnd="@id/leftHundred"
+        android:layout_marginStart="-5dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="@string/negative_one_hundred"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/rightNegHundred"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rightZeroText"
+        android:layout_alignStart="@id/rightHundred"
+        android:layout_alignEnd="@id/rightHundred"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="-5dp"
+        android:gravity="center"
+        android:text="@string/negative_one_hundred"
+        android:textColor="@android:color/black" />
+
+    <FrameLayout
+        android:id="@+id/rightReferenceFrame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="150dp"
+        android:layout_toEndOf="@id/stopButton">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/leftReferenceFrame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="150dp"
+        android:layout_toStartOf="@id/stopButton">
+
+    </FrameLayout>
+
+</RelativeLayout>
